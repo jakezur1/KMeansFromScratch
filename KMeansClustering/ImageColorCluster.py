@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '/Users/jakezur/Documents/boredom-projects/KMeansClustering/KMeansModel')
+sys.path.insert(1, '/Users/jakezur/Documents/boredom-projects/KMeansFromScratch/KMeansClustering/KMeansModel')
 from KMeansClustering import KMeans
 import math
 import pandas as pd
@@ -9,7 +9,7 @@ import matplotlib.image as mpimg
 import pprint
 from PIL import Image
 
-img_path = '/Users/jakezur/Documents/VSCode/Boredom Projects/KMeansClustering/Data/SmallImage.png'
+img_path = '/Users/jakezur/Documents/boredom-projects/KMeansFromScratch/KMeansClustering/TestingData/MonarchButterfly.png'
 img = mpimg.imread(img_path)
 
 dimmensions = img.shape
@@ -43,7 +43,7 @@ imgplot = plt.imshow(img)
 plt.show()
 print(df)
 
-cluster_model = KMeans(k=3, df=df, features=['red', 'green', 'blue'])
+cluster_model = KMeans(k=5, df=df, features=['red', 'green', 'blue'])
 cluster_model.train_model()
 
 for centroid in cluster_model.centroids:
